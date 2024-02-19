@@ -1,0 +1,23 @@
+.App {
+    background-color: rgb(69, 82, 53);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.nav-bar {
+    width: 100%;
+    height: 6.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(57, 67, 43);
+}
+
+.nav-bar-li {
+    margin-left: 3rem;
+    list-style: none;
+    list-style-image: none;
+}

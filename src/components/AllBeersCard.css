@@ -1,0 +1,48 @@
+.beer-card {
+    position: relative;
+    display: flex;
+    align-items: end;
+    border: rgba(0, 0, 0, 0.331) solid 3rem;
+    border-radius: 50%;
+    height: 18rem;
+    width: 18rem;
+}
+
+.beer-card-link {
+    text-decoration: none;
+}
+
+.beer-image {
+    position: absolute;
+    top: 3rem;
+    left: 7rem;
+    height: 18rem;
+    z-index: 0;
+    align-self: center;
+    opacity: 0.5;
+}
+
+.beer-card-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 12rem;
+    z-index: 10;
+}
+
+.beer-card-info h1 {
+    align-self: center;
+    font-weight: 900;
+    font-size: 2rem;
+    color: antiquewhite;
+}
+
+.beer-card-info em {
+    font-size: smaller;
+    font-style: italic;
+    color: rgb(141, 132, 119);
+}
+
+.beer-card-info p {
+    color: rgb(211, 198, 181);
+}
