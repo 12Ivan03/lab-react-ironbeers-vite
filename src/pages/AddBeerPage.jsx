@@ -1,10 +1,10 @@
 
+import './AddBeerPage.css'
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function AddBeerPage() {
-
     const [ name, setName ] = useState('');
     const [ tagline, setTagline ] = useState('');
     const [ description, setDescription ] = useState('');
@@ -27,7 +27,6 @@ function AddBeerPage() {
             attenuation_level: attenuation,
             contributed_by: contributed
         }
-
         //console.log('newBeer',newBeer)
 
         axios.post('https://ih-beers-api2.herokuapp.com/beers/new', newBeer)
@@ -38,77 +37,93 @@ function AddBeerPage() {
     }
 
     return(
-        <div>
-            <h1>Add New Beer Page</h1>
-
-            <form onSubmit={handleSubmit}>
-                <label> Name:
-                    <input 
-                        type="text" 
-                        name="name" 
-                        value={name} 
-                        onChange={(e) => setName(e.target.value)}
-                    />
-                </label>
+        <div className="create-container">
+            <h1 className="title-create-beers">Create New Beer Page</h1>
+            <div>
+                <form onSubmit={handleSubmit}>
+                    <label> Name:
                     <br />
-                <label> Tagline:
-                    <input 
-                        type="text" 
-                        name="tagline" 
-                        value={tagline} 
-                        onChange={(e) => setTagline(e.target.value)} 
-                    />
-                </label>
-                    <br />
-                <label> Description:
-                    <textarea 
-                        type="text" 
-                        name="description" 
-                        rows={4} 
-                        cols={50} 
-                        value={description} 
-                        onChange={(e) => setDescription(e.target.value)}                            
-                    />
-                </label>
-                    <br />
-                <label>First Brewed:
-                    <input 
-                        type="text" 
-                        name="first_brewed" 
-                        value={firstBrewed} 
-                        onChange={(e) => setFirstBrewed(e.target.value)}
+                        <input 
+                            className="search-bar-input"
+                            type="text" 
+                            name="name" 
+                            value={name} 
+                            onChange={(e) => setName(e.target.value)}
                         />
-                </label>
+                    </label>
+                        <br />
+                    <label> Tagline:
                     <br />
-                <label>Brewer&apos;s Tips:
-                    <input 
-                        type="text" 
-                        name="brewers_tips" 
-                        value={tips}
-                        onChange={(e) => setTipe(e.target.value)}
+                        <input 
+                            className="search-bar-input"
+                            type="text" 
+                            name="tagline" 
+                            value={tagline} 
+                            onChange={(e) => setTagline(e.target.value)} 
                         />
-                </label>
+                    </label>
+                        <br />
+                    <label> Description:
                     <br />
-                <label>Attenuation Level:
-                    <input 
-                        type="number" 
-                        name="attenuation_level" 
-                        value={attenuation}
-                        onChange={(e) => setAttenuation(e.target.value)}
+                        <textarea 
+                            className="search-bar-input"
+                            type="text" 
+                            name="description" 
+                            rows={4} 
+                            cols={50} 
+                            value={description} 
+                            onChange={(e) => setDescription(e.target.value)}                            
                         />
-                </label>
+                    </label>
+                        <br />
+                    <label>First Brewed:
                     <br />
-                <label>Contributed By:
-                    <input 
-                        type="text" 
-                        name="contributed_by"
-                        value={contributed}
-                        onChange={(e) => setContribution(e.target.value)} 
-                    />
-                </label>
+                        <input 
+                            className="search-bar-input"
+                            type="text" 
+                            name="first_brewed" 
+                            value={firstBrewed} 
+                            onChange={(e) => setFirstBrewed(e.target.value)}
+                            />
+                    </label>
+                        <br />
+                    <label>Brewer&apos;s Tips:
                     <br />
-                <button type="submit">Submit</button>
-            </form>
+                        <input 
+                            className="search-bar-input"
+                            type="text" 
+                            name="brewers_tips" 
+                            value={tips}
+                            onChange={(e) => setTipe(e.target.value)}
+                            />
+                    </label>
+                        <br />
+                    <label>Attenuation Level:
+                    <br />
+                        <input 
+                            className="search-bar-input"
+                            type="number" 
+                            name="attenuation_level" 
+                            value={attenuation}
+                            onChange={(e) => setAttenuation(e.target.value)}
+                            />
+                    </label>
+                        <br />
+                    <label>Contributed By:
+                    <br />
+                        <input 
+                            className="search-bar-input"
+                            type="text" 
+                            name="contributed_by"
+                            value={contributed}
+                            onChange={(e) => setContribution(e.target.value)} 
+                        />
+                    </label>
+                        <br />
+                        <br />
+                    <button className="search-button" type="submit">Submit</button>
+                </form>
+            </div>
         </div>
     )
 }

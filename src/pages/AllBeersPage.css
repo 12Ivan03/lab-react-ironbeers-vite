@@ -30,6 +30,11 @@
     border-left: rgb(24, 28, 18) solid 0.1rem ;
 }
 
+.search-button:hover {
+    cursor: pointer;
+    text-shadow: white 0 0 0.1rem;
+}
+
 .search-bar-input {
     height: 2.2rem;
     width: 23.1rem;

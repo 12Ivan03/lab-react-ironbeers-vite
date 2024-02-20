@@ -1,6 +1,6 @@
 
 import { NavLink } from "react-router-dom";
-import homeImg from '../assets/home-icon.png'
+import homeImg from '../assets/home-icon.png';
 
 function Navbar() {
 
