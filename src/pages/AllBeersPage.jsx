@@ -1,6 +1,6 @@
 
-import './RandomBeerPage.css'
-import "./AllBeersPage.css"
+import './RandomBeerPage.css';
+import "./AllBeersPage.css";
 import AllBeersCard from "../components/AllBeersCard";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -11,7 +11,7 @@ function AllBeersPage() {
     const [ axiosAnswer, setAxiosAnswer ] = useState([]);
     const [ searchParams, setSearchParams ] = useSearchParams();
     const [ search, setSearch ] = useState('');
-    const [ showSearch, setShowSearch ] = useState(false)
+    const [ showSearch, setShowSearch ] = useState(false);
 
 
     useEffect(() => {
@@ -19,9 +19,9 @@ function AllBeersPage() {
             .then((response) => {
                 setAxiosAnswer(response.data);
                 setIsLoading(false);
-                console.log('info from the DB here ===>', response.data)
+                console.log('info from the DB here ===>', response.data);
             })
-            .catch(err => console.log(err))
+            .catch(err => console.log(err));
     }, [])
 
     useEffect(() => {

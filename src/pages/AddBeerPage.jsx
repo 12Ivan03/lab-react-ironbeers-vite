@@ -32,7 +32,7 @@ function AddBeerPage() {
         axios.post('https://ih-beers-api2.herokuapp.com/beers/new', newBeer)
             .then(() => {
                 //console.log('new beer ==>', response);
-                navigate('/beers')
+                navigate('/beers');
             })
     }
 
