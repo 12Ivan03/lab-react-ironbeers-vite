@@ -28,15 +28,25 @@ function BeerDetailsPage() {
     }
 
     return(
-        <div>
-            <h1>Single Beer Page</h1>
-            <img src={singleBeer.image_url} alt="beer_image" />
-            <h1>{singleBeer.name}</h1>
-            <p>{singleBeer.tagline}</p>
-            <p>{singleBeer.first_brewed}</p>
-            <p>{singleBeer.attenuation_level}</p>
-            <p>{singleBeer.description}</p>
-            <p>{singleBeer.contributed_by}</p>
+        <div className="single-beer-container">
+            <div className="beer-card">
+                    <div className="beer-card-image">
+                        <img src={singleBeer.image_url} alt="Beer_image" className="beer-image" />
+                    </div>
+                    <div className="beer-card-info">
+                        <h1>{singleBeer.name}</h1>
+                        <p><em>Slogan:</em></p>
+                        <p>{singleBeer.tagline}</p>
+                    </div>             
+            </div>
+            <div className="single-info beer-card-info">
+                    <p><em>First brewed: </em>{singleBeer.first_brewed}</p>
+                    <p><em>Attentive: </em>{singleBeer.attenuation_level}&</p>
+                    <p><em>Slogan:</em></p>
+                    <p>{singleBeer.description}</p>
+                    <p><em>Contributed by:</em></p>
+                    <p>{singleBeer.contributed_by}</p>
+            </div>
         </div>
     )
 }

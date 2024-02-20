@@ -1,4 +1,5 @@
 
+import './RandomBeerPage.css'
 import "./AllBeersPage.css"
 import AllBeersCard from "../components/AllBeersCard";
 import axios from "axios";
@@ -27,6 +28,7 @@ function AllBeersPage() {
         axios.get('https://ih-beers-api2.herokuapp.com/beers/search?' + searchParams)
             .then((res) => {
                 setAxiosAnswer([...res.data]);
+                setIsLoading(false);
                 //console.log("response from the API ?",res)
             })
     }, [search])
@@ -58,11 +60,11 @@ function AllBeersPage() {
                 </button>
             </div>
 
-            {showSearch && <div className="search-bar">         
-                <label>
-                    <input className="search-bar-input" type="text" name="search" placeholder="Search here..." value={search} onChange={handleSearch} />
-                </label>
-            </div>     
+            {showSearch &&  <div className="search-bar">         
+                                <label>
+                                    <input className="search-bar-input" type="text" name="search" placeholder="Search here..." value={search} onChange={handleSearch} />
+                                </label>
+                            </div>     
             }
 
             {(axiosAnswer.length === 0) 
