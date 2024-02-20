@@ -8,8 +8,9 @@ import { useSearchParams } from "react-router-dom";
 function AllBeersPage() {
     const [ isLoading, setIsLoading ] = useState(true);
     const [ axiosAnswer, setAxiosAnswer ] = useState([]);
-    let [ searchParams, setSearchParams ] = useSearchParams();
+    const [ searchParams, setSearchParams ] = useSearchParams();
     const [ search, setSearch ] = useState('');
+    const [ showSearch, setShowSearch ] = useState(false)
 
 
     useEffect(() => {
@@ -36,6 +37,10 @@ function AllBeersPage() {
         setSearchParams("q=" + e.target.value);
     }
 
+    function handleShowSearchBar() {
+        setShowSearch(!showSearch);
+    }
+
     if(isLoading){
         return(
             <div>
@@ -47,17 +52,23 @@ function AllBeersPage() {
     return(
         <div className="all-beers-container">
             <div>
-                <h1>All Beer</h1>
-                <p>search bar</p>
-                <label>
-                    <input type="text" name="search" placeholder="Search..." value={search} onChange={handleSearch} />
-                </label>
+                <h1 className="title-all-beers">Beers</h1>
+                <button className="search-button" onClick={handleShowSearchBar} >
+                    {showSearch ? 'Hide' : 'Show'}  Search Bar
+                </button>
             </div>
-            {axiosAnswer.map(beer => {
-                return (
-                    <AllBeersCard key={beer._id} beerPass={beer} />
-                )
-            })}
+
+            {showSearch && <div className="search-bar">         
+                <label>
+                    <input className="search-bar-input" type="text" name="search" placeholder="Search here..." value={search} onChange={handleSearch} />
+                </label>
+            </div>     
+            }
+
+            {(axiosAnswer.length === 0) 
+            ? <div><h1 className="search-beers">No Beers Found</h1></div> 
+            : axiosAnswer.map(beer => <AllBeersCard key={beer._id} beerPass={beer} />)
+            }
         </div>
     )
 }

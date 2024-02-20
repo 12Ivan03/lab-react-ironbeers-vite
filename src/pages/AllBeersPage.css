@@ -1,6 +1,39 @@
 .all-beers-container {
+    position: relative;
     margin: 3rem 1rem 10rem 3rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+}
+
+.title-all-beers {
+    font-size: 10rem;
+    font-weight: 900;
+
+}
+
+.search-bar {
+    position: absolute;
+    top: 15rem;
+}
+
+.search-beers {
+    font-size: 4rem;
+}
+
+.search-button {
+    height: 2.5rem;
+    width: 23.5rem;
+    background-color: rgb(69, 82, 53);
+    border-radius: 1rem;
+    border-top: rgb(24, 28, 18) solid 0.1rem ;
+    border-left: rgb(24, 28, 18) solid 0.1rem ;
+}
+
+.search-bar-input {
+    height: 2.2rem;
+    width: 23.1rem;
+    background-color: rgb(69, 82, 53);
+    border-radius: 1rem;
+    border: rgb(24, 28, 18) solid 0.1rem ;
 }
