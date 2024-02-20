@@ -7,8 +7,6 @@ import createBeer from "../assets/new-beer.png"
 
 function HomePage() {
 
-    
-
     return(
         <div className='home-page-comtainer'>
             <ul>

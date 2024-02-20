@@ -24,4 +24,4 @@ function AllBeersCard({beerPass}) {
     )
 }
 
-export default AllBeersCard
+export default AllBeersCard;

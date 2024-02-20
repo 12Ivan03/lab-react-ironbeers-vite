@@ -6,6 +6,7 @@
     border-radius: 50%;
     height: 18rem;
     width: 18rem;
+    z-index: 5;
 }
 
 .beer-card-link {
@@ -17,7 +18,7 @@
     top: 3rem;
     left: 7rem;
     height: 18rem;
-    z-index: 0;
+    z-index: 5;
     align-self: center;
     opacity: 0.5;
 }
@@ -35,6 +36,7 @@
     font-weight: 900;
     font-size: 2rem;
     color: antiquewhite;
+    z-index: 10;
 }
 
 .beer-card-info em {
@@ -45,4 +47,5 @@
 
 .beer-card-info p {
     color: rgb(211, 198, 181);
+    z-index: 10;
 }
